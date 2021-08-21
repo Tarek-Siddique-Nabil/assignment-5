@@ -1,32 +1,10 @@
-// function updatePrice(product, price){
-//     const productPriceOutput = document.getElementById(product +'-cost');
-//     let productPrice = productPriceOutput.innerText;
-//     if(productPrice == 0){
-//         productPrice = parseInt(productPrice + price) ;
-
-//     }
-//     else if(productPrice != 0){
-//         productPrice = parseInt(productPrice + price) ;
-//     }
-
-//     productPriceOutput.innerText = productPrice;
-
-
-// }
-
+// Button Function //
 function updatePrice(product, price) {
     const itemPrice = document.getElementById(product + '-cost')
     itemPrice.innerText = price;
-
-   
-
-
-
-
-calculateTotal();
-  
+calculateTotal(); 
 }
-
+//  Button //
 document.getElementById('memory-btn1').addEventListener('click', function () {
     updatePrice('memory', 0);
 })
@@ -48,26 +26,29 @@ document.getElementById('delivery-btn1').addEventListener('click', function () {
 document.getElementById('delivery-btn2').addEventListener('click', function () {
     updatePrice('delivery', 20);
 })
+//  Button //
 
+//  Calculation Start //
 function getInput(product){
     const inputValue = document.getElementById(product +'-cost').innerText;
      const value = parseInt(inputValue);
-     return value;
-   
+     return value; 
 }
-
 function calculateTotal() {
     const basePrice = getInput('base');
     const memoryPrice = getInput('memory');
     const storagePrice = getInput('storage');
     const deliveryPrice = getInput('delivery');
-  
+
    const total =basePrice + memoryPrice + storagePrice + deliveryPrice ;
    document.getElementById('total-cost').innerText = total;
    document.getElementById('total').innerText = total;
-   
+ 
 }
+//  Calculation End //
 
+
+//  Promo Start //
 document.getElementById('promo-code').addEventListener('click',function() {
    const input = document.getElementById('promo-input').value;
    const code = 'stevekaku';
@@ -78,16 +59,11 @@ document.getElementById('promo-code').addEventListener('click',function() {
   if(input == code){
        const last = parseFloat(total-((total/100)*20));
        document.getElementById('total').innerText= last;
-       success.style.display ='block';
-        fail.style.display = 'none';
        
    }
-   else{
-    fail.style.display = 'block';
-    success.style.display = 'none';
-   }
-   
+ 
 })
+// promo End //
     
  
 
