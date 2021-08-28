@@ -1,5 +1,4 @@
 # assignment-5
+use promo code and get 20% discount 😍
 
-######use promo code and get 20% discount 😍
-
-####Promo code is -"stevekaku"
+#### Promo code is -"stevekaku"
